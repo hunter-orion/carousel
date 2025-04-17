@@ -1,0 +1,87 @@
+body {
+    margin: 0;
+}
+
+
+.slider-wrapper {
+    /* overall width*/
+    width: 100%;
+}
+
+.slides-container {
+    position: relative;
+    /* height adjusted as needed */
+    height: calc(100vh - 12rem);
+    /* can adjust overall width */
+    width: 100%;
+    /* overflow hidden for no phone scrolling */
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    /* control time of transition and ease make sure time and transition type is same as slide-content */
+    transition: transform 2s ease-in-out;
+}
+
+.slide-content {
+    transition: transform 2s ease-in-out;
+}
+
+.push-right {
+    transform: translateX(100%);
+}
+
+.push-left {
+    transform: translateX(-100%);
+}
+
+/* keep z index for first slide higher than rest, then dynamic JS will take over, colors for testing only, can remove subsiquate z-index's after 1 */
+.slide:nth-child(1) {
+    background-color: #49b293;
+    z-index: 100;
+
+    /* optional way to set image in background */
+}
+
+.slide:nth-child(1)>.slide-content {
+    /* change picture from here */
+    background: url('https://plus.unsplash.com/premium_photo-1690303193898-f9c721d0770b?q=80&w=2066&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    height: 60rem;
+}
+
+.slide:nth-child(2) {
+    background-color: #b03532;
+    z-index: 0;
+}
+
+.slide:nth-child(3) {
+    background-color: #6a478f;
+    z-index: 1;
+}
+
+.slide:nth-child(4) {
+    background-color: #da6f2b;
+    z-index: 1;
+}
+
+.slide:nth-child(5) {
+    background-color: #413129;
+    z-index: 1;
+}
+
+.slide:nth-child(6) {
+    background-color: #8d8581;
+    z-index: 1;
+}
